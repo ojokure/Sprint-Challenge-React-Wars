@@ -2,6 +2,7 @@ import React, { useState, useEffect }from 'react';
 import './App.css';
 import axios from 'axios';
 import CharacterList from './CharacterList';
+import styled from 'styled-components';
 
 
 const App = () => {
