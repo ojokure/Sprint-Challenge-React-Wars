@@ -5,7 +5,7 @@ import App from "./App";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  color:white;
+  color:blue;
   display: flex;
   justify-content: space-evenly;
   margin: 20px;
@@ -16,6 +16,7 @@ const StyledDiv = styled.div`
   &:hover {
     color: green;
     font-weight: bold;
+    {!n-th child % === 0 ? color:green; : color:initial;}
   }
 `;
 
