@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import App from "./App";
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  display:flex;
-  justify-content:space-evenly;
-  margin:20px;
+  color:white;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  font-family:Comic 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #7ab900,
     0 0 70px #7ab900, 0 0 80px #7ab900, 0 0 100px #7ab900, 0 0 150px #7ab900;
+  backdrop-filter:greyscale(0.8);
   &:hover {
     color: green;
     font-weight: bold;
