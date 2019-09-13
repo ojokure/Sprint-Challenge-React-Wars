@@ -23,7 +23,7 @@ const App = () => {
           // debugger
           setCharacter(res.data.results);
         })
-    }, [setCharacter]);
+    }, [Character]);
 
     
   return (
