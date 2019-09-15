@@ -5,49 +5,66 @@ import App from "./App";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  color:blue;
-  display: flex;
-  justify-content: space-evenly;
+  color: blue;
+  text-align: center;
+  align-content: center;
   margin: 20px;
-  font-family:Comic 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "ABeeZee";
+  width: 100%;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #7ab900,
     0 0 70px #7ab900, 0 0 80px #7ab900, 0 0 100px #7ab900, 0 0 150px #7ab900;
-  backdrop-filter:greyscale(0.8);
+  backdrop-filter: greyscale(0.8);
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
   &:hover {
     color: green;
     font-weight: bold;
-    {!n-th child % === 0 ? color:green; : color:initial;}
+  }
+`;
+
+const WrapDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: center;
+  &:hover {
+    background-position: 0 -500px;
   }
 `;
 
 const Character = ({ name, height, mass, hairColor, gender, films }) => {
   return (
-    <div>
-      <StyledDiv>
-        Name: {name} Mass: {height} Height: {mass} HairColor: {hairColor}
-        Gender: {gender}
-      </StyledDiv>
-    </div>
+    <StyledDiv>
+      <div>
+        <h3>Name: {name} </h3>
+        <p>Mass: {mass} </p>
+        <p>Height: {height} </p>
+        <p>HairColor: {hairColor} </p>
+        <p> Gender: {gender} </p>
+      </div>
+    </StyledDiv>
   );
 };
 
-const CharacterList = props => {
-  const { data } = props;
-
+const CharacterList = ({ data }) => {
   return (
-    <div className="Character">
-      {props.data.map(el => {
+    <WrapDiv className="Character">
+      {data.map(el => {
         return (
-          <Character
-            name={el.name}
-            height={el.height}
-            mass={el.mass}
-            hairColor={el.hair_color}
-            gender={el.gender}
-          />
+          <div>
+            <Character
+              name={el.name}
+              height={el.height}
+              mass={el.mass}
+              hairColor={el.hair_color}
+              gender={el.gender}
+            />
+          </div>
         );
       })}
-    </div>
+    </WrapDiv>
   );
 };
 

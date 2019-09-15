@@ -21,10 +21,9 @@ const App = () => {
 
   useEffect(() => {
     axios.get(starWarsApi).then(res => {
-      // debugger
       setCharacter(res.data.results);
     });
-  }, [Character]);
+  }, []);
 
   return (
     <div className="App">
